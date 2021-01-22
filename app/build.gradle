@@ -20,10 +20,13 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-kapt'
 
+// apply plugin: "androidx.navigation.safeargs" -- for Java or mixed Java and Kotlin modules,
+apply plugin: "androidx.navigation.safeargs.kotlin" // generate Kotlin code suitable for Kotlin-only modules
+
 android {
     compileSdkVersion 28
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
     defaultConfig {
         applicationId 'com.example.android.navigation'
